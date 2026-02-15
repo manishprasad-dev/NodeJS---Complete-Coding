@@ -1,0 +1,1 @@
+Something Which Will Be Only Written If The Method Is POST

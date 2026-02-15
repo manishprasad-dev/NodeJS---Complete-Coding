@@ -1,7 +1,5 @@
 const http = require("http");
 
-
-
 const server = http.createServer((req, res) => {
     console.log(req.url, req.method);
     res.setHeader("Content-Type", "text/html");
@@ -49,7 +47,6 @@ const PORT = 3003;
 server.listen(PORT, () => {
     console.log(`Server is live at address http://localhost:${PORT}`);
 })
-
 
 /*
 Problem 
