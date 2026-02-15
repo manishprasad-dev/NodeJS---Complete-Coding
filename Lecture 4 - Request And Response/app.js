@@ -2,7 +2,9 @@ const http = require("http");
 const fs = require("fs");
 
 const server = http.createServer((req , res) => {
-    res.setHeader("Content-Type", "text/html");
+
+    res.setHeader("Content-Type", "text/html"); //This tells browser:“I am sending HTML content.”, otherwise the browser will treat this as a normal text
+
         //form
         if(req.url === "/"){
             res.write(`

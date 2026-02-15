@@ -32,12 +32,22 @@ const server = http.createServer((req , res) => {
             });
 
             req.on('end' , () =>{
-                const parsedData = Buffer.concat(body).toString();
-                // concat = concatenation
-                console.log(parsedData);
+                const fullBody = Buffer.concat(body).toString();
+                console.log(`Printing Raw : ${fullBody}`);
+
+                
+                const params = new URLSearchParams(fullBody);
+                console.log(`Printing Params : ${params}`);
+                console.log(`Printing Params Entries : ${params.entries()}`);
+                const bodyObject = {};
+                for(const [key , value] of params.entries()){
+                    bodyObject[key] = value;
+                }
+
+                console.log(bodyObject);
             });
 
-            fs.writeFileSync("user-details.txt" , "Something Which Will Be Only Written If The Method Is POST");
+            // fs.writeFileSync("user-details.txt" , "Something Which Will Be Only Written If The Method Is POST");
             res.statusCode = 302; 
             // res.setHeader("Location" , "/");
             res.write("Hello Am I Visible");
