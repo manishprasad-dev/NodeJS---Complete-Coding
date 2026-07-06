@@ -1,0 +1,35 @@
+
+<%- include('components/header.ejs') %>
+<!-- we are using it for only rendering the header -->
+
+
+
+
+<h1><%= title %></h1>
+// we are using it for rendering the title of the page which we have passed from the controller. We can use it in the view file to set the title of the page dynamically.
+
+
+<!-- rendering the list of products passed by the controller -->
+<ul>
+
+    <label for="">List Of Products</label>
+    <% products.forEach(product=>{ %>
+
+        <li><%= product.id + ": " + product.title %></li>
+
+    <%}) %>
+
+    <br>
+    <br>
+
+
+
+    <label for="">List Of Services</label>
+    <% services.forEach(service=>{%>
+
+        <li><%= service.id +": "+ service.title %></li>
+        
+    <%}) %>
+
+
+</ul>

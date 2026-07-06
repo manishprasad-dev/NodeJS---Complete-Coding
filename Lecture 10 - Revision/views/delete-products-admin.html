@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Products - Admin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .admin-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+        }
+
+        .header h1 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.85;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 16px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid rgba(255,255,255,0.6);
+            padding: 8px 18px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+        }
+
+        .back-link:hover {
+            background: #fff;
+            color: #764ba2;
+        }
+
+        .product-list {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+
+        .product-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product-row:last-child {
+            border-bottom: none;
+        }
+
+        .product-info {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .product-icon {
+            font-size: 28px;
+        }
+
+        .product-details h3 {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .product-details .price {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .delete-btn {
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.25s ease;
+        }
+
+        .delete-btn:hover {
+            background: #c0392b;
+        }
+
+        .empty-state {
+            padding: 50px 24px;
+            text-align: center;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="admin-badge">ADMIN PANEL</span>
+        <h1>Delete Products</h1>
+        <p>Select a product below to remove it from the store</p>
+        <a href="/" class="back-link">&larr; Back to Home</a>
+    </div>
+
+    <div class="product-list">
+        <div class="product-row">
+            <div class="product-info">
+                <div class="product-icon">🎧</div>
+                <div class="product-details">
+                    <h3>Wireless Headphones</h3>
+                    <div class="price">$59.99</div>
+                </div>
+            </div>
+            <form action="/admin/delete-products-adminrouter" method="POST">
+                <input type="hidden" name="productId" value="1">
+                <button type="submit" class="delete-btn">Delete</button>
+            </form>
+        </div>
+
+        <div class="product-row">
+            <div class="product-info">
+                <div class="product-icon">⌚</div>
+                <div class="product-details">
+                    <h3>Smart Watch</h3>
+                    <div class="price">$89.99</div>
+                </div>
+            </div>
+            <form action="/admin/delete-products-adminrouter" method="POST">
+                <input type="hidden" name="productId" value="2">
+                <button type="submit" class="delete-btn">Delete</button>
+            </form>
+        </div>
+
+        <div class="product-row">
+            <div class="product-info">
+                <div class="product-icon">💻</div>
+                <div class="product-details">
+                    <h3>Laptop Stand</h3>
+                    <div class="price">$24.99</div>
+                </div>
+            </div>
+            <form action="/admin/delete-products-adminrouter" method="POST">
+                <input type="hidden" name="productId" value="3">
+                <button type="submit" class="delete-btn">Delete</button>
+            </form>
+        </div>
+
+        <div class="product-row">
+            <div class="product-info">
+                <div class="product-icon">🖱️</div>
+                <div class="product-details">
+                    <h3>Wireless Mouse</h3>
+                    <div class="price">$18.49</div>
+                </div>
+            </div>
+            <form action="/admin/delete-products-adminrouter" method="POST">
+                <input type="hidden" name="productId" value="4">
+                <button type="submit" class="delete-btn">Delete</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

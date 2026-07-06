@@ -1,0 +1,17 @@
+<%- include('components/header.ejs') %>
+
+
+<h1>This is about us page</h1>
+
+<ul>
+
+    <label for="">List Of Services</label>
+    <% services.forEach(service=>{%>
+
+        <li><%= service.id +": "+ service.title %></li>
+
+    <%}) %>
+
+
+</ul>
+
