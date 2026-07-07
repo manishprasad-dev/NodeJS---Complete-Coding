@@ -5,7 +5,7 @@ const userRouter = express.Router();
 const path = require("path");
 
 
-userRouter.get("/about",(req, res , next)=>{
+userRouter.get("/about",(req, res )=>{
     console.log("This is about route of user router" , req.url , req.method);
     // res.send(
     //     `<h1>This is about route of user router</h1>`
@@ -14,13 +14,13 @@ userRouter.get("/about",(req, res , next)=>{
     res.sendFile(path.join(__dirname , '..' , 'views' , 'user-about.html'));
 });
 
-userRouter.get("/contact",(req, res , next)=>{
+userRouter.get("/contact",(req, res)=>{
     console.log("This is contact route of user router" , req.url , req.method);
     // res.send(
     //     `<h1>This is contact route of user router</h1>`
     // );
 
-    res.sendFile(path.join(__dirname , '..' , 'views' , 'user-contact.html'));
+    res .sendFile(path.join(__dirname , '..' , 'views' , 'user-contact.html'));
 });
 
 userRouter.get("/products",(req, res , next)=>{

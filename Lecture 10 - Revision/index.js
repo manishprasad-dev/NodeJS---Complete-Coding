@@ -116,8 +116,8 @@ const server = http.createServer(app);
 
 
 server.listen(PORT , ()=>{
-    console.log(`Server is running at address http://localhost:${PORT}`)
-})
+    console.log(`Server is running at address http://localhost:${PORT}`);
+});
 
 //So the problem with this approach is that we have to write the routes for users and admin in the same file, which is not a good practice. So we will use express routers to separate the routes for users and admin in different files.
 
